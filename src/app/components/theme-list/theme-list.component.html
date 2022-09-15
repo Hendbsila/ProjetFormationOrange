@@ -1,0 +1,23 @@
+<section>
+    
+    <div id="div1">
+        <div id="sec" class="row">
+            <li *ngFor="let t of listoftheme">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img id="im1" src={{t.image}} alt="Card image cap">
+                            <h5> {{t.title}}</h5>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>{{t.description}}</p>
+                            <a [routerLink]="['/formations/' ,t.id]" class="btn"> Détails</a>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+        </div>
+    </div>
+</section>

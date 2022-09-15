@@ -1,0 +1,60 @@
+<section class="position">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          
+                <div class="content col-lg-8 col-xl-7">
+                    <div class="card ">
+                        <div class="facture">
+                            <div class="entete">
+                                <span id="nomPrenom">Student</span>
+                                <p id="adresseMail">student@gmail.com</p>
+                            </div>
+                            <hr>
+                            <div class="corps">
+
+
+
+                                <table>
+                                    <tr>
+                                        <td><span>Nom de la formation</span></td>
+                                        <td><span>{{mySession.formation.title}}</span> </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><span>Session</span></td>
+                                        <td><span>{{mySession.date|date:'longDate'}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Durée</span></td>
+                                        <td><span>{{mySession.duration}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Prix</span> </td>
+                                        <td><span>{{mySession.prix}} Dinars TTC</span></td>
+                                    </tr>
+                                </table>
+                                <br><br><br>
+                                <a (click)="AddUserToSession()" class="btn btn-success">Payer</a>
+
+                            </div>
+                            <hr>
+                            <div class="piedPage">
+                                <p ><span id="email">e-learning-platform@platform.com </span><strong id="tel">Tel:  +216 123 123</strong> </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image ">
+                    <!-- https://img.freepik.com/vecteurs-libre/groupe-etudiants-regardant-webinaire-ligne_74855-5514.jpg?w=1380&t=st=1662735374~exp=1662735974~hmac=676ba35bbc5dd18047a7225d1d279e40e9e089c5b19ca95b135282de7f240e7e -->
+                    
+                    <img
+                    
+                        src="https://img.freepik.com/vecteurs-premium/fond-plat-abstrait_23-2149123682.jpg?w=1060" width="100%">
+                    </div>
+            </div>
+        
+    </div>
+    <br><br>
+</section>

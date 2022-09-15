@@ -1,0 +1,70 @@
+.cards-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin: 0 0.5em;
+    width: calc(100%/3);
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 0;
+  }
+  .carousel-inner {
+    padding: 1em;
+  }
+@media screen and (max-width:567px){
+    .card {
+        
+        width: 100%;
+        
+      }
+    
+}
+.btn-group{
+  float: right;
+
+}
+
+.btn{
+  margin: 3%;
+}
+
+
+.title{
+  font-weight: bold;
+  font-size: 30px;
+}
+p{
+  font-family: monospace;
+  color:rgb(251, 193, 2);
+}
+h5{
+  font-family: monospace;
+  text-indent: inherit;
+}
+p:hover{
+  font-size: 20px;
+}
+
+.btnSinscrire{
+  color:white;
+  background-color: rgb(10, 92, 10);
+  border-color: white;
+  }
+  .btnSinscrire:hover{
+    background-color: white;
+    border-color: rgb(10, 92, 10);
+    color:rgb(10, 92, 10) ;
+    }
+  .btnDecouvrir:hover{
+    color:black;
+border-color:rgb(251, 193, 2);
+background-color: white;
+
+  }
+  .btnDecouvrir{
+    color:white;
+    background-color:rgb(251, 193, 2);
+    border-color:white;
+    }

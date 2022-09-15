@@ -1,0 +1,131 @@
+<section class="jumbotron jumbotron-fluid position">
+
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Votre carrière commence par ici
+                                    !</p>
+
+                                <form *ngIf="!isSuccessful" name="form" #f="ngForm" (ngSubmit)="addUser(f.value)" class="mx-1 mx-md-4">
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input #username="ngModel" ngModel required minlength="3" maxlength="15"
+                                                type="text" id="username" class="form-control" name="username" />
+                                            <div *ngIf="(username.touched || f.submitted)&&username.invalid"
+                                                class="alert-danger">
+                                                <p *ngIf="username.errors.required">Ce champs est obligatoire</p>
+                                                <p *ngIf="username.errors.minlength">Username invalide</p>
+
+                                            </div>
+                                            <label class="form-label" for="username">Username</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input #nom="ngModel" ngModel required minlength="3" maxlength="15"
+                                                type="text" id="nom" class="form-control" name="nom" />
+                                            <div *ngIf="(nom.touched || f.submitted)&&nom.invalid" class="alert-danger">
+                                                <p *ngIf="nom.errors.required">Ce champs est obligatoire</p>
+                                                <p *ngIf="nom.errors.minlength">Nom invalide</p>
+
+                                            </div>
+                                            <label class="form-label" for="nom">Nom</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input #prenom="ngModel" ngModel required minlength="3" maxlength="15"
+                                                type="text" id="prenom" class="form-control" name="prenom" />
+                                            <div *ngIf="(prenom.touched || f.submitted)&&prenom.invalid"
+                                                class="alert-danger">
+                                                <p *ngIf="prenom.errors.required">Ce champs est obligatoire</p>
+                                                <p *ngIf="prenom.errors.minlength">Prènom invalide</p>
+
+                                            </div>
+                                            <label class="form-label" for="prenom">Prènom</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input #exp="ngModel" ngModel required email type="email" id="email"
+                                                name="email" class="form-control" />
+                                            <div *ngIf="(exp.touched|| f.submitted)&&exp.invalid" class="alert-danger">
+                                                <p *ngIf="exp.errors.required">Ce champs est obligatoire</p>
+                                                <p *ngIf="exp.errors.email">Adresse mail invalide</p>
+                                            </div>
+
+                                            <label class="form-label" for="email">Adresse mail</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input [pattern]="passwordPtn" #password="ngModel" 
+                                                ngModel required minlength="8" maxlength="20" type="password"
+                                                id="password" name="password" class="form-control" />
+                                            <div *ngIf="(password.touched|| f.submitted)&&password.invalid" class="alert-danger">
+                                                <p *ngIf="password.errors.required">Ce champs est obligatoire</p>
+                                                <p *ngIf="password.errors.minlength">faible securité</p>
+                                                <p *ngIf="password.errors.pattern">mot de passe doit etre composé de lettre
+                                                    majiscule, miniscule et au moins un chiffre</p>
+
+                                            </div>
+                                            <label class="form-label" for="password">Mot de passe</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input #mdpvalid="ngModel" ngModel required 
+                                                type="password" id="confmotdepasse" class="form-control"
+                                                name="confmotdepasse" />
+                                            <div *ngIf="(mdpvalid.touched|| f.submitted)&&mdpvalid.invalid"
+                                                class="alert-danger">
+                                                <p *ngIf="mdpvalid.errors.required">Ce champs est obligatoire</p>
+
+                                            </div>
+                                            <p *ngIf="(mdpvalid!=mdp)&&(mdpvalid.touched|| f.submitted)"
+                                                class="alert-danger">Les champs ne sont pas identiques</p>
+
+                                            <label class="form-label" for="confmotdepasse">Confirmer le mot de
+                                                passe</label>
+
+                                        </div>
+                                    </div> -->
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button class="btn btn-primary btn-lg">Valider</button>
+                                    </div>
+
+
+                                </form>
+                                <div class="alert alert-success" *ngIf="isSuccessful">
+                                   Votre compte a été créé avec succès !
+                                  </div>
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <!-- https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp -->
+                                <img src="https://img.freepik.com/vecteurs-libre/etudiants-regardent-webinaire-ordinateur-etudient-ligne_74855-15522.jpg?w=1060&t=st=1662285088~exp=1662285688~hmac=b5ff15c02d725bfa0426eed5c39e336fd5d60561c6c691a49e5f129d174351c6"
+                                    class="img-fluid" alt="Sample image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

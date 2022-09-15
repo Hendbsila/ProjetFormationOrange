@@ -1,0 +1,20 @@
+<section id="sect" >
+    <div class="container">
+        <h3> Thèmes</h3>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let t of listoftheme"> <i>{{ t.title}} <i class="btn-group"><span><button
+                                [routerLink]="['/adminPage/updateTheme/' ,t.id]"
+                                class="btn btnModifer">Modifier</button></span><span><button
+                            (click)="supprimerTheme(t.id)" class="btn btnSupprimer">Supprimer</button></span></i> </i>
+            </li>
+
+        </ul>
+    </div>
+</section>
+<br>
+<hr>
+<br>
+<section>
+    <router-outlet></router-outlet>
+</section>

@@ -1,0 +1,66 @@
+<section >
+  <div class="container-fluid">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        
+              <div class="content col-lg-8 col-xl-7">
+                  <div class="card ">
+                      <div class="facture">
+                          <div class="entete">
+                              <span id="nomPrenom">Bsila Hend</span>
+                              <p id="adresseMail">{{currentUser.email}}</p>
+                              <p>Num CIN 1234 1234 </p>
+                          </div>
+                          <hr>
+                          <div class="corps">
+
+
+
+                              <table>
+                                  <tr>
+                                      <td><span>Nom de la formation</span></td>
+                                      <td><span>{{mySession.formation.title}}</span> </td>
+
+                                  </tr>
+                                  <tr>
+                                      <td><span>Session</span></td>
+                                      <td><span>{{mySession.date|date:'longDate'}}</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td><span>Durée</span></td>
+                                      <td><span>{{mySession.duration}}</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td><span>Prix de l'heure</span> </td>
+                                      <td><span>{{mySession.heureprix}} Dinars TTC</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td><span>Total</span> </td>
+                                    <td><span>{{total}} Dinars TTC</span></td>
+                                </tr>
+                              </table>
+                              <br><br><br>
+                              <a routerLink="acceuil" (click)="validate()" class="btn btn-success">Valider</a>
+
+                          </div>
+                          <hr>
+                          <div class="piedPage">
+                              <p ><span id="email">e-learning-platform@platform.com </span>     <strong id="tel">Tel:  +216 123 123</strong> </p>
+
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="image ">
+                
+                <!-- https://img.freepik.com/vecteurs-libre/etudiants-qui-etudient-ligne_74855-5584.jpg?w=1060&t=st=1662738048~exp=1662738648~hmac=9ded417843069aace86440414b9b851046eeec55ed6a524dc67605bd230f219d -->
+                <!-- https://img.freepik.com/vecteurs-libre/fond-geometrique-plat_23-2148957201.jpg?w=1060&t=st=1662892817~exp=1662893417~hmac=bebe94dfafe300cda2ef157886de32ec28f4e9e3ec01dd91a85c3c1c3972e2ee -->
+                <img
+                      src="https://img.freepik.com/vecteurs-libre/fond-minimal-dessine-main_23-2149017896.jpg?w=1060&t=st=1662892887~exp=1662893487~hmac=e69b14d83aa440f9f0f6cd0547b6ecfa082bb2c6ffa45455fc2bbf2bf4dcec0a" >
+                      
+                    </div>
+          </div>
+      
+  </div>
+  <br><br><br>
+</section>

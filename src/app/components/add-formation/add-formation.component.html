@@ -1,0 +1,34 @@
+<section class="position">
+
+
+    <h3> Ajouter une nouvelle formation </h3>
+    <form #f="ngForm" (ngSubmit)="addFormation(f.value)">
+        <label for="title">Title</label>
+        <input ngModel required type="text" class="form-control" id="title" name="title">
+
+        <label for="description">Description</label>
+        <input ngModel type="text" class="form-control" id="description" name="description">
+
+        <label for="theme">Thème</label><br>
+        <select [(ngModel)]="docvalue" (ngModelChange)="modify($event)" name="theme" class="form-select form-control">
+            <option selected>Choisir un thème</option>
+            <option *ngFor="let t of listTheme" id="theme"  [value]="t.id" > {{t.title}} </option>
+        </select>
+        <!-- <label for="formateur">Formateur</label><br>
+        <select ngModel name="formateur" class="form-select form-control">
+            <option selected>Choisir un formateur</option>
+            <option *ngFor="let f of listFormateur" id="formateur" [ngvalue]="f"> {{f.nom|uppercase}} {{f.prenom  | titlecase}} </option>
+        </select> -->
+        <br>
+        <!-- <label for="formateur">Formateur</label>
+            <input ngModel required type="text" class="form-control" id="formateur" name="formateur">
+            <label for="session">Session</label>
+            <input ngModel type="text" class="form-control" id="session" name="session">
+            <label for="theme">Theme</label>
+            <input ngModel type="text" class="form-control" id="theme" name="theme"> -->
+
+        <button class="btn">Ajouter</button>
+    </form>
+    
+</section>
+<br><br>

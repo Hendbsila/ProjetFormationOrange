@@ -1,0 +1,24 @@
+<section >
+    <div class="container-fluid">
+        <h3> Liste des Formateurs </h3>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let f of listofFormateurs"> <i>{{ f.nom |uppercase}} {{f.prenom |
+                    titlecase}} <span><button (click)="SupprimerFormateur(f.id)"
+                            class="btn btnSupprimer " >Supprimer</button></span></i> </li>
+        </ul>
+    </div>
+    <br><br>
+</section>
+<section>
+    <div class="container-fluid">
+        <h3> Liste des Utilisateurs </h3>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let u of listofUsers"> <i>{{ u.username }} {{u.role}} <span>
+                <button (click)="SupprimerUser(u.id)"
+                            class="btn btnSupprimer " >Supprimer</button></span></i> </li>
+        </ul>
+    </div>
+    <br><br>
+</section>

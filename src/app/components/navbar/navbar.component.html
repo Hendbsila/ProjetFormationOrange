@@ -1,0 +1,77 @@
+<section >
+<nav class="positionNavbar" class="navbar fixed-top navbar-expand-lg   " (scroll)="onWindowScroll()">
+  
+    
+    <button class="navbar-toggler  ml-auto " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
+  <div id="sec" class="collapse navbar-collapse" id="navbarSupportedContent" >
+    <ul class="navbar-nav mx-auto" >
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="acceuil" routerLinkActive="active">  Accueil  </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" routerLink="themes"  routerLinkActive="active">  Thèmes </a>
+      </li>
+
+      <!-- <li class="nav-item dropdown " id="navbarTogglerDemo01">
+        <a class="nav-link dropdown-toggle" routerLink="themes" routerLinkActive="active" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">  Thèmes  </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/formations/' ,'all']" routerLinkActive="active">  Formations </a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" routerLink="formations" routerLinkActive="active" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">  Formation  </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+     
+      <li class="nav-item ">
+
+        <a class="nav-link" *ngIf="!logSer.isLoggedIn()"  routerLink="signup"  routerLinkActive="active">  S'inscrire </a>
+      </li> 
+      <li class="nav-item ">
+        <a class="nav-link " *ngIf="!logSer.isLoggedIn()" routerLink="signin"  routerLinkActive="active">  Se connecter  </a>
+ 
+
+      </li> 
+    </ul>
+
+  </div>
+  <div *ngIf="logSer.isLoggedIn()" class="profileMenu" >
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+        <a class="nav-link "  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.freepik.com/vecteurs-libre/homme-affaires-caractere-avatar-isole_24877-60111.jpg?w=740&t=st=1663074215~exp=1663074815~hmac=2999914e853c1cb0015103c751ed4a6959283a886900734adca9ccab0745894d" width="350" alt="blue user icon" alt="photo de profile" width="40" height="40" class="rounded-circle">
+        </a>
+        <div  class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['profile/' ,currentUser.id]"  ><i class="icon fa-solid fa-user"></i>Mon compte</a>
+          <a class="dropdown-item" [routerLink]="['profile/' ,currentUser.id]" ><i class="icon fa-solid fa-gear"></i>Paramètres</a>
+          <a class="dropdown-item" *ngIf="!logSer.isAdmin()" [routerLink]="['mesSessions/' ,currentUser.id]"><i class="icon fa-solid fa-book"></i>Mes Sessions</a>
+          <!-- <a class="dropdown-item" *ngIf="logSer.isFormateur()" [routerLink]="['note-honoraire/', currentUser.id]"><i class="icon fa-solid fa-money-check-dollar"></i>Note d'honoraire</a> -->
+          <a class="dropdown-item" *ngIf="logSer.isAdmin()" routerLink="adminPage"  ><i class="icon fa-solid fa-desktop "></i>Back office</a>
+          <a class="dropdown-item" routerLink="acceuil" *ngIf="logSer.isLoggedIn()" (click)="toLogout()"><i class="icon fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+        </div>
+      </li>   
+    </ul>
+  </div>
+ 
+</nav>
+
+
+
+</section>

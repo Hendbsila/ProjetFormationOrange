@@ -1,0 +1,18 @@
+.title{
+    font-size: 3vw;
+    text-align: center;
+}
+.position{
+    padding:  10%; /* Height of navbar */;
+}
+.btn{
+    float: right;
+
+    background-color: white;
+    color: rgb(33, 142, 250);
+    border-color: rgb(33, 142, 250);
+    font-size: 25px;
+}
+h6{
+    font-weight: bold;
+}

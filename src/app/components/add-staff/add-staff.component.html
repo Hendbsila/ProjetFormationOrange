@@ -1,0 +1,115 @@
+<section>
+
+    <h3> Ajouter un nouveau formateur</h3>
+    <form #f="ngForm" (ngSubmit)="addStaff(f.value)">
+        <label class="form-label" for="nom">Nom</label>
+        <input #nom="ngModel" ngModel required minlength="2" maxlength="15" type="text" id="nom" class="form-control"
+            name="nom" />
+        <div *ngIf="(nom.touched || f.submitted)&&nom.invalid" class="alert-danger">
+            <p *ngIf="nom.errors.required">Ce champs est obligatoire</p>
+            <p *ngIf="nom.errors.minlength">Nom invalide</p>
+        </div>
+
+        <label class="form-label" for="prenom">Prènom</label>
+        <input #prenom="ngModel" ngModel required minlength="3" maxlength="15" type="text" id="prenom"
+            class="form-control" name="prenom" />
+        <div *ngIf="(prenom.touched || f.submitted)&&prenom.invalid" class="alert-danger">
+            <p *ngIf="prenom.errors.required">Ce champs est obligatoire</p>
+            <p *ngIf="prenom.errors.minlength">Prènom invalide</p>
+
+        </div>
+        <label class="form-label" for="usernamef">Username</label>
+        <input #username="ngModel" ngModel required minlength="3" maxlength="15"
+        type="text" id="usernamef" class="form-control" name="username" />
+   
+        <div *ngIf="(username.touched || f.submitted)&&username.invalid"
+        class="alert-danger">
+        <p *ngIf="username.errors.required">Ce champs est obligatoire</p>
+        <p *ngIf="username.errors.minlength">Username invalide</p>
+
+    </div>
+        <label class="form-label" for="cin">CIN</label>
+        <input [pattern]="cinPtn" #cin="ngModel" ngModel required  maxLength="8" type="number" id="cin"
+            class="form-control" name="cin" />
+        <div *ngIf="(cin.touched || f.submitted)&&cin.invalid" class="alert-danger">
+            <p *ngIf="cin.errors.required">Ce champs est obligatoire</p>
+            <p *ngIf="cin.errors.pattern">Le num de la carte d'identité doit être composé de 8 chiffres</p>
+
+        </div>
+        <label class="form-label" for="prenom">Profession</label>
+        <input #profession="ngModel" ngModel required type="text" id="profession" class="form-control"
+            name="profession" />
+
+        <!-- <label class="form-label" for="role">Ajouter un role</label><br>
+
+        <select #role="ngModel" ngModel required class="form-select form-control" name="role">
+
+            <option id="admin" name="admin" value="admin"> Administrateur</option>
+            <option id="formateur" name="formateur" value="formateur"> Formateur</option>
+        </select>
+        <div *ngIf="(role.touched|| f.submitted)&&role.invalid" class="alert-danger">
+            <p *ngIf="role.errors.required">Ce champs est obligatoire</p>
+
+        </div> -->
+        <br>
+        <button class="btn btn-primary">Ajouter</button>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <h3>Ajouter un nouveau compte</h3>
+    <form #u="ngForm" (ngSubmit)="addUser(u.value)">
+
+        <label class="form-label" for="email">Adresse mail</label>
+            <input #exp="ngModel" ngModel required email type="email" id="email" name="email" class="form-control" />
+            <div *ngIf="(exp.touched|| u.submitted)&&exp.invalid" class="alert-danger">
+                <p *ngIf="exp.errors.required">Ce champs est obligatoire</p>
+                <p *ngIf="exp.errors.email">Adresse mail invalide</p>
+            </div>
+        <label class="form-label" for="username">Username</label>
+            <input #username="ngModel" ngModel required minlength="3" maxlength="15"
+            type="text" id="username" class="form-control" name="username" />
+       
+            <div *ngIf="(username.touched || u.submitted)&&username.invalid"
+            class="alert-danger">
+            <p *ngIf="username.errors.required">Ce champs est obligatoire</p>
+            <p *ngIf="username.errors.minlength">Username invalide</p>
+
+        </div>
+
+        <label class="form-label" for="motdepasse">Mot de passe</label>
+            <input [pattern]="passwordPtn" #mdp="ngModel" [(ngModel)]="regArry.mdp" ngModel required minlength="8"
+                maxlength="20" type="password" id="motdepasse" name="password" class="form-control" />
+            <div *ngIf="(mdp.touched|| u.submitted)&&mdp.invalid" class="alert-danger">
+                <p *ngIf="mdp.errors.required">Ce champs est obligatoire</p>
+                <p *ngIf="mdp.errors.minlength">faible securité</p>
+                <p *ngIf="mdp.errors.pattern">mot de passe doit etre composé de lettre
+                    majiscule, miniscule et au moins un chiffre</p>
+
+            </div>
+            <!-- <label class="form-label" for="confmotdepasse">Confirmer le mot de passe</label>
+            <input #mdpvalid="ngModel" ngModel required [(ngModel)]="regArry.mdpvalid" type="password"
+                id="confmotdepasse" class="form-control" name="confmotdepasse" />
+            <div *ngIf="(mdpvalid.touched|| f.submitted)&&mdpvalid.invalid" class="alert-danger">
+                <p *ngIf="mdpvalid.errors.required">Ce champs est obligatoire</p>
+
+            </div>
+            <p *ngIf="(regArry.mdpvalid!=regArry.mdp)&&(mdpvalid.touched|| f.submitted)" class="alert-danger">Les champs
+                ne sont pas identiques</p> -->
+
+        <label class="form-label" for="role">Ajouter un role</label><br>
+
+        <select ngModel #role="ngModel" name="role" required class="form-select form-control" id="role">
+            <option *ngFor="let r of listofRoles"    [value]="r">{{r.name}}</option>
+           
+        </select>
+        <!-- <div *ngIf="(role.touched || u.submitted)&&role.invalid" class="alert-danger">
+            <p *ngIf="role.errors.required">Ce champs est obligatoire</p>
+
+        </div> -->
+        <br>
+        <button class="btn btn-primary">Ajouter</button>
+    </form>
+   
+</section>
+<br><br>

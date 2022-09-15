@@ -1,0 +1,17 @@
+<section id="sect">
+    <div class="container">
+        <h3> Formations </h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let f of listofFormation"> <i><span id="title">{{ f.title}} : </span>  {{ f.description|short:60}}
+                   <i class="btn-group"> <span><button [routerLink]="['/adminPage/updateFormation/' ,f.id]"
+                            class="btn btnModifer">Modifier</button></span><span><button (click)="SupprimerFormation(f.id)"
+                            class="btn btnSupprimer">Supprimer</button></span></i></i> </li>
+        </ul>
+    </div>
+</section>
+<br>
+<hr>
+<br>
+<section>
+<router-outlet></router-outlet>
+</section>

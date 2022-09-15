@@ -1,0 +1,45 @@
+.btn {
+    background-color: #ffbd59;
+    border-color:  #ffbd59;
+}
+.btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.form-control:focus {
+    border-color: #ffbd59;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(109, 203, 199, 0.8);
+  }
+
+  .showLink{
+    
+    text-decoration: underline;
+    color: gray;
+    float: right;
+    cursor: pointer;
+  }
+  .showLink:hover{
+    color: black ;
+  }
+  
+  .btnModifer{
+    border-color: rgb(109, 203, 199);
+    color:rgb(109, 203, 199);
+    background-color: white;
+}
+.btnSupprimer{
+    border-color:red;
+    color:red;
+    background-color: white;
+    margin-left: 5%;
+}
+.btn-group{
+  float: right;
+
+}
+.position{
+  
+    padding-top: 5%;
+  
+}

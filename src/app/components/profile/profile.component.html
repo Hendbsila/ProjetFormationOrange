@@ -1,0 +1,166 @@
+<section class="myAccount position">
+  <hr>
+  <br>
+  <h3 class="title">Mes informations personnelles</h3>
+  <br>
+  <hr>
+  <div class="container-fluid h-100 ">
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <div class="container ">
+        <img class="profilImage" src="../../../assets/profilImg.jpg">
+        <div class="col-lg-6 col-xl-5 ">
+          <div class="card text-black profileCard">
+            <div class="card-body p-md-5">
+              <div class="row d-flex justify-content-center align-items-center">
+
+                <div id="profile">
+                  <div *ngIf="currentUser">
+                    <header class="jumbotron">
+                      <h3>
+                        Profile
+                      </h3>
+                      <hr>
+                    </header>
+                    <br>
+                    <h5 id="name">{{ currentUser.username |titlecase }}</h5>
+                    <br>
+                    <div style="overflow-x:auto;">
+                      <table class="table">
+                        <tr scope="row">
+                          <td><span>Username</span></td>
+                          <td><span id="username" style="text-align: center;">{{ currentUser.username }}</span>
+                          </td>
+
+                        </tr>
+                        <tr scope="row">
+                          <td><span>Adresse mail</span></td>
+                          <td><span id="email">{{ currentUser.email }}</span></td>
+                        </tr>
+                        <tr>
+                          <!-- <td><strong>Roles</strong></td>
+                          <td>
+                            <ul>
+                              <li *ngFor="let role of currentUser.roles">
+                                {{ role }}
+                              </li>
+                            </ul> 
+                          </td> -->
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="vh-100 position">
+  <hr>
+  <br>
+  <h3 class="title">Mettre à jour mes informations</h3>
+  <br>
+  <hr>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+
+          <form  name="form" #f="ngForm" (ngSubmit)="UpdateUser(f.value)" class="mx-1 mx-md-4">
+            <div class="d-flex flex-row align-items-center mb-4">
+               
+                <div class="form-outline flex-fill mb-0">
+                  <label class="form-label" for="username">Username</label>
+                    <input [(ngModel)]="currentUser.username" #username="ngModel" ngModel required minlength="3" maxlength="15"
+                        type="text" id="username" class="form-control" name="username" />
+                    <div *ngIf="(username.touched || f.submitted)&&username.invalid"
+                        class="alert-danger">
+                        <p *ngIf="username.errors.required">Ce champs est obligatoire</p>
+                        <p *ngIf="username.errors.minlength">Username invalide</p>
+          
+                    </div>
+                    
+                </div>
+            </div>
+          
+            <div class="d-flex flex-row align-items-center mb-4">
+               
+                <div class="form-outline flex-fill mb-0">
+                  <label class="form-label" for="nom">Nom</label>
+                    <input [(ngModel)]="currentUser.name" #nom="ngModel" ngModel required minlength="3" maxlength="15"
+                        type="text" id="nom" class="form-control" name="nom" />
+                    <div *ngIf="(nom.touched || f.submitted)&&nom.invalid" class="alert-danger">
+                        <p *ngIf="nom.errors.required">Ce champs est obligatoire</p>
+                        <p *ngIf="nom.errors.minlength">Nom invalide</p>
+          
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-4">
+               
+                <div class="form-outline flex-fill mb-0">
+                  <label class="form-label" for="prenom">Prènom</label>
+                    <input [(ngModel)]="currentUser.prenom" #prenom="ngModel" ngModel required minlength="3" maxlength="15"
+                        type="text" id="prenom" class="form-control" name="prenom" />
+                    <div *ngIf="(prenom.touched || f.submitted)&&prenom.invalid"
+                        class="alert-danger">
+                        <p *ngIf="prenom.errors.required">Ce champs est obligatoire</p>
+                        <p *ngIf="prenom.errors.minlength">Prènom invalide</p>
+          
+                    </div>
+                    
+                </div>
+            </div>
+          
+            <div class="d-flex flex-row align-items-center mb-4">
+               
+                <div class="form-outline flex-fill mb-0">
+                  <label class="form-label" for="email">Adresse mail</label>
+                    <input [(ngModel)]="currentUser.email"  #exp="ngModel" ngModel required email type="email" id="email"
+                        name="email" class="form-control" />
+                    <div *ngIf="(exp.touched|| f.submitted)&&exp.invalid" class="alert-danger">
+                        <p *ngIf="exp.errors.required">Ce champs est obligatoire</p>
+                        <p *ngIf="exp.errors.email">Adresse mail invalide</p>
+                    </div>
+          
+                    
+                </div>
+            </div>
+          
+            <div class="d-flex flex-row align-items-center mb-4">
+                
+                <div class="form-outline flex-fill mb-0">
+                  <label class="form-label" for="password">Mot de passe</label>
+                    <input [(ngModel)]="currentUser.password" [pattern]="passwordPtn" #password="ngModel" 
+                        ngModel required minlength="8" maxlength="20" type="password"
+                        id="password" name="password" class="form-control" />
+                    <div *ngIf="(password.touched|| f.submitted)&&password.invalid" class="alert-danger">
+                        <p *ngIf="password.errors.required">Ce champs est obligatoire</p>
+                        <p *ngIf="password.errors.minlength">faible securité</p>
+                        <p *ngIf="password.errors.pattern">mot de passe doit etre composé de lettre
+                            majiscule, miniscule et au moins un chiffre</p>
+          
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <button class="btn btn-primary btn-lg">Valider</button>
+            </div>
+          
+          
+          </form>
+
+        </div>
+      </div>
+    </div> 
+  </div>
+</section>

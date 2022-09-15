@@ -1,0 +1,123 @@
+#image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40%;
+   
+}
+img{
+    width: 100%;
+    height: 80vh;
+   
+
+}
+
+h1{
+    text-align: center;
+    font-family: monospace;    
+    font-size: 30px;
+}
+.sectionImage{
+    height: 80vh;
+}
+
+#photo{
+    margin-top: 5%;
+    width:65%; 
+    height:90%;
+    border-radius: 5%;
+}
+.usphoto{
+/* background-color: #f5ebe0; */
+text-align: center;
+border-radius: 12%;
+}
+p{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20%;
+    
+}
+#teacher{
+   align-self: center;
+   
+}
+#us{
+    margin:5% 5% 5% 5%;
+}
+.canvaPhoto{
+    position: relative; 
+    width: 100%; 
+    height: 0; 
+    padding-top: 56.2500%;
+    padding-bottom: 48px; 
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); 
+    margin-top: 1.6em; margin-bottom: 0.9em; 
+    overflow: hidden;
+    border-radius: 8px; 
+    
+}
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 35px;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+    padding-top: 20%;
+    text-align:center;
+
+}
+/* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+blockquote:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 4em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+    padding-top: 20%;
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+   /* display: block; don't use this, it raised the quote too high from the bottom - defeated line-height? */
+    float:right;
+    font-size:4em;
+    line-height: 1;
+    right:0;
+    bottom:-0.5em;
+    content: "\201D";
+}
+blockquote footer {
+    padding: 0 2em 0 0;
+    text-align:right;
+    font-size: 20px;
+    font-family: Georgia, serif;
+}
+blockquote cite:before {
+    content: "\2013";
+    font-size: 20px;
+   
+}
+
+
+@media screen and (max-width:567px) {
+    #photo{
+        width:100%;
+        height: 60vh;
+    }
+    #teacher{
+        width:100%;
+        height: 50vh;
+        
+     }
+     #image{
+        height: 100%
+     }
+     .sectionImage{
+        height: 100%;
+        
+     }
+     
+}

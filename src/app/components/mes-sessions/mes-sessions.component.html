@@ -1,0 +1,23 @@
+<section class=" position">
+    <hr>
+    <br>
+    <h3 class="title">Mes sessions</h3>
+    <br>
+    <hr>
+    <div class="container">
+      <div class="row">
+          <li *ngFor="let s of myListOfSessions">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title title ">{{s.formation.title}}</h5>
+                      <h6 class="card-subtitle">{{s.date|date:'longDate'}} </h6>
+                      <h6 class="card-subtitle duration">{{s.duration}} </h6><br><br>
+                      <p class="card-text">{{s.formation.description}}</p>
+                      <a [routerLink]="['/note-honoraire/', s.id ]"class="btn ">Note d'honoraire</a>
+                  </div>
+
+              </div>
+          </li>
+      </div>
+  </div>
+  </section>

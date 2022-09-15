@@ -1,0 +1,37 @@
+
+<section class="position">
+        <h3> Ajouter une nouvelle session </h3>
+        <form #f="ngForm" (ngSubmit)="addSession (f.value)">
+            <label for="titre">Titre</label>
+            <input ngModel required type="text" class="form-control" id="titre" name="titre">
+            <label for="date">Date</label>
+            <input ngModel required type="date" class="form-control" id="date" name="date">
+
+            <label for="duration">Duration</label>
+            <input ngModel type="text" class="form-control" id="duration" name="duration">
+            
+            <label for="prix">Prix total </label>
+            <input ngModel type="number" class="form-control" id="prix" name="prix">
+           
+            <label for="heureprix">Prix de l'heure</label>
+            <input   ngModel type="number" class="form-control" id="heureprix" name="heureprix">
+            
+            <label for="formation">Formation</label><br>
+            <select  [(ngModel)]="forvalue" (ngModelChange)="modify($event)" id="formation" name="formation"  class="form-select form-control" >
+                <option selected>Choisir une formation</option>
+                <option *ngFor="let f of listFormation"    [value]="f.id"> {{f.title}} </option>  
+             </select>
+
+             <label for="formateur">Formateur</label><br>
+             <select  [(ngModel)]="forma" (ngModelChange)="modifValue($event)" name="formateur" id="formateur"  class="form-select form-control" >
+                 <option selected >Choisir un formateur</option>
+                 <option *ngFor="let t of listFormateur"   [value]="t.id"> {{t.prenom|uppercase}} {{t.nom|uppercase}}</option>  
+              </select>
+             <br>
+
+         
+            <button class="btn btn-primary">Ajouter</button>
+        </form>
+   
+</section>
+<br><br>

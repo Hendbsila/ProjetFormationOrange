@@ -1,0 +1,31 @@
+.btnModifer{
+    border-color: #1f3c64;
+    color:#1f3c64;
+    background-color: white;
+}
+.btnSupprimer{
+    border-color:red;
+    color:red;
+    background-color: white;
+    margin-left: 5%;
+}
+.btn-group{
+  float: right;
+
+}
+#title{
+    font-size: 600;
+    
+    
+}
+#sect{
+    padding-top: 5%;
+  }
+  .btnSupprimer:hover{
+    background-color: red;
+    color: white;
+  }
+  .btnModifer:hover{
+    background-color: #1f3c64;
+    color:white;
+  }

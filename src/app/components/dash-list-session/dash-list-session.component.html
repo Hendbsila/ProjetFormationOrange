@@ -1,0 +1,16 @@
+<section id="sect">
+    <div class="container">
+        <h3> Liste des sessions </h3>
+    
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let s of listofsessions"> <i>{{s.formation.title}} {{s.titre}}    {{s.titre}} {{s.date| date:'mediumDate'}}  {{s.sessionStatus|statut}}<i class="btn-group"><span>
+                <button [routerLink]="['/adminPage/updateSession/' ,s.id]" class="btn btnModifer">Modifier</button></span><span><button (click)="SupprimerSession(s.id)" class="btn btnSupprimer">Supprimer</button></span></i></i> </li>  
+        </ul>
+    </div>
+    </section>
+<br>
+<hr>
+<br>
+<section>
+<router-outlet></router-outlet>
+</section>

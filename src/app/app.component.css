@@ -1,0 +1,8 @@
+*{
+    font-family: 'Inconsolata', monospace,'Courier New', Courier;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+   
+}

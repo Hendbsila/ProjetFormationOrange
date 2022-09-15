@@ -1,0 +1,125 @@
+<div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+        <div class="card ">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[0].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[0].duration}}</h6>
+            <p class="card-text">{{sessionList[0].prix}} Dinars TTC</p>
+           <div class="btn-group">
+              <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/payement', sessionList[0].id ]" type="button" class="btn  btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[0].formation.id]" type="button" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[1].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[1].duration}}</h6>
+            <p class="card-text">{{sessionList[1].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/payement', sessionList[1].id ]" class="btn btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[1].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[2].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[2].duration}} heures </h6>
+            <p class="card-text">{{sessionList[2].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[2].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[2].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[3].formation.title}}  </h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[3].duration}} heures </h6>
+            <p class="card-text">{{sessionList[3].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[3].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[3].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[4].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[4].duration}} heures</h6>
+            <p class="card-text">{{sessionList[4].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <a  *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[4].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[4].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[5].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[5].duration}} heures</h6>
+            <p class="card-text">{{sessionList[5].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[5].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[5].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+        <div class="card ">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[6].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[6].duration}} heures</h6>
+            <p class="card-text">{{sessionList[6].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[6].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</a>
+              <a [routerLink]="['/sessions/', sessionList[6].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[7].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[7].duration}} heures</h6>
+            <p class="card-text">{{sessionList[7].prix}} Dinars TTC</p>
+            <div class="btn-group">
+              <button *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[7].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</button>
+              <button [routerLink]="['/sessions/', sessionList[7].formation.id]" class="btn btnDecouvrir">Découvrir</button>
+            </div>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+          <div class="card-body">
+            <h5 class="card-title title">{{sessionList[8].formation.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{sessionList[8].duration}}Card subtitle</h6>
+            <p class="card-text">{{sessionList[8].prix}} Dinars TTC</p>
+            <div class="btn-group">
+            <a *ngIf="logSe.isLoggedIn()" [routerLink]="['/sessions/', sessionList[8].formation.id, 'payement']" class="btn btnSinscrire">S'inscrire</a>
+            <a [routerLink]="['/sessions/', sessionList[8].formation.id]" class="btn btnDecouvrir">Découvrir</a>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

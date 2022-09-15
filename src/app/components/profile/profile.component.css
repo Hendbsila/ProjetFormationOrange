@@ -1,0 +1,71 @@
+.position{
+    /* padding:  60px 10px 0; /* Height of navbar */
+    padding-top: 10%;
+}
+/* #profile{
+    margin: 10% 10% 10% 10%;
+    padding-left: 5%;
+    padding-top: 3%;
+    border: 1px solid;
+    border-radius: 20%;
+    height: 200px;
+} */
+.title{
+    font-size: 3vw;
+    text-align: center;
+    font-family: monospace;
+}
+.profileCard{
+    border-radius: 10px;
+    /* box-shadow: 2px 2px 2px 2px rgba(255, 255, 255,0.8); */
+    height: 60vh;
+    border-color: white;
+}
+.profilImage{
+    width: 55%;
+    height: 70vh;
+    float: right;
+    
+}
+#profile h3{
+    font-size: 4vh;
+    text-align: center;
+}
+
+#profile #name{
+    font-size: 4vh;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+table{
+   width: 80%;
+   float: right;
+}
+td{
+    text-align: left;
+    font-size: 1.4rem;
+    
+}
+
+.alert-danger{
+    background-color: rgba(0,0,0,0);
+    color: red;
+}
+.btn {
+    background-color: rgb(109, 203, 199);
+    border-color: rgb(109, 203, 199);;
+}
+.btn:hover{
+    color: black;
+    background-color: white;
+}
+.form-control:focus {
+    border-color: rgb(109, 203, 199);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(109, 203, 199, 0.8);
+  }
+  form{
+    padding: 5%;
+  }
+ 
